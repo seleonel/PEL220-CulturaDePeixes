@@ -1,0 +1,59 @@
+#+TITLE: PEL220 - Cultura de Peixes
+#+AUTHOR: Leon Ferreira Bellini, Victor Acosta, Luis Ricardo
+
+* Membros
+
+| Nome                  |         RA |
+|-----------------------+------------|
+| Leon Ferreira Bellini | 00126315-1 |
+| Victor Acosta         |            |
+| Luis Ricardo          |            |
+|-----------------------+------------|
+
+
+* Proposta
+
+O presente trabalho propõe a simulação de uma estrutura IoT de um tanque de *piscicultura*, com o monitoramento em tempo real de variáveis como temperatura da água, salinidade, pH, nível da água, etc, envio dessas variáveis para um centralizador, sendo esse, o *Orion Context Broker*, salvamento dessas variáveis em um banco de dados relacional para, então, consumo dessas linhas por meio de um painel do *Grafana* para que seja possível completa observabilidade do ambiente.
+
+Por meio do acompanhamento dessas métricas, o sistema  será capaz de se adaptar e atuar automaticamente sobre o ambiente por meio de atuadores como uma *bomba de água*, para inserir mais água fresca no tanque, além de controlar o nível de pH e um *aerador* para melhorar o índice de oxigênio no ambiente.
+
+* Arquitetura
+:PROPERTIES:
+:ID:       241361ed-b68c-42ea-bf7c-6c7f36b0cc79
+:END:
+
+Na figura [[fig:arquitetura]], podemos observar a arquitetura da simulação, sendo que cada membro iniciando com =c:= se trata de um *contêiner* Docker (ou Podman)
+
+
+#+DOWNLOADED: screenshot @ 2026-11-21 17:07:03
+#+NAME: arquitetura
+[[file:Arquitetura/2026-11-21_17-07-03_screenshot.png]]
+
+
+* Dependências
+
+1. =docker= ou =podman= instalado no sistema;
+   - =docker-compose= ou =podman-compose= instalado no sistema;
+2. Acesso a um sistema capaz de executar contêineres docker com suporte à virtualização;
+3. Acesso a um sistema capaz de se conectar à Internet.
+
+* Entidades
+:PROPERTIES:
+:ID:       cee24c34-7e39-4163-9b1f-151d478071a2
+:END:
+
+Na imagem [[fig:entidades]], podemos observar o modelo básico de entidades do FIWARE, NGSI-ld, contendo as seguintes entidades:
+
+| Entidade     | ID |
+|--------------+----|
+| WaterTank    |    |
+| WaterStation |    |
+| Aerator      |    |
+| WaterPump    |    |
+| Feeder       |    |
+|--------------+----|
+
+
+#+DOWNLOADED: screenshot @ 2026-11-21 17:10:54
+#+NAME: entidades
+[[file:Entidades/2026-11-21_17-10-54_screenshot.png]]
