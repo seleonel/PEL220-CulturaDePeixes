@@ -25,7 +25,7 @@ Na tabela [[GrupoMembros]] são listados os membros do grupo juntamente a seus r
 | Nome                  |         RA |
 |-----------------------+------------|
 | Leon Ferreira Bellini | 00126315-1 |
-| Victor Acosta         |            |
+| Vitor Acosta          | 00126306-0 |
 | Luis Ricardo          |            |
 |-----------------------+------------|
 
@@ -41,7 +41,33 @@ Na figura [[fig:arquitetura]], podemos observar a arquitetura da simulação, se
 [[file:Arquitetura/2026-11-21_17-07-03_screenshot.png]]
 
 ** Protocolos
-** Sensores
+| Componente                | Tecnologia           |
+| ------------------------- | -------------------- |
+| Microcontrolador          | ESP32                |
+| Broker MQTT               | Mosquitto            |
+| Conversão MQTT ↔ NGSI     | IoT Agent JSON       |
+| Gerenciamento de Contexto | Orion Context Broker |
+| Banco Operacional         | MongoDB              |
+| Persistência Histórica    | Cygnus               |
+| Banco Histórico           | MySQL                |
+| Dashboard                 | Grafana              |
+
+** Sensores e Atuadores
+| Sensor                              | Função                                                  | Unidade    |
+|-------------------------------------|---------------------------------------------------------|------------|
+| Sensor de Temperatura da Água       | Monitorar a temperatura do tanque                       | °C         |
+| Sensor de pH                        | Monitorar a acidez/alcalinidade da água                 | pH         |
+| Sensor de Salinidade                | Monitorar a concentração de sais dissolvidos            | ppt ou g/L |
+| Sensor de Oxigênio Dissolvido       | Monitorar o nível de oxigênio disponível para os peixes | mg/L       |
+| Sensor de Nível da Água             | Monitorar o volume disponível no tanque                 | cm         |
+
+
+| Atuador                | Função                                  |
+|------------------------|-----------------------------------------|
+| Alimentador Automático | Liberar ração para os peixes            |
+| Bomba de Água          | Realizar circulação e renovação da água |
+| Aerador                | Oxigenar a água quando necessário       |
+
 
 * Entidades
 :PROPERTIES:
@@ -57,7 +83,7 @@ Na imagem [[fig:entidades]], podemos observar o modelo básico de entidades as q
 | WaterStation | Grupo de sensores para coleta de dados do tanque     |
 | Aerator      | Aerador que introduzirá oxigênio à água.             |
 | WaterPump    | Bomba de água que introduzirá água limpa ao ambiente |
-| Feeder       | Alimentador automático        |
+| Feeder       | Alimentador automático                               |
 |--------------+------------------------------------------------------|
 
 #+DOWNLOADED: screenshot @ 2026-11-21 17:10:54
