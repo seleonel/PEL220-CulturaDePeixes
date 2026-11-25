@@ -45,7 +45,7 @@ Na tabela [[GrupoMembros]] são listados os membros do grupo juntamente a seus r
 |-----------------------+------------|
 | Leon Ferreira Bellini | 00126315-1 |
 | Vitor Acosta da Rosa  | 00126306-0 |
-| Luis Ricardo          |            |
+| Luis Ricardo          | 00126317-7 |
 |-----------------------+------------|
 
 * Arquitetura
