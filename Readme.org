@@ -56,7 +56,7 @@ Na tabela [[GrupoMembros]] são listados os membros do grupo juntamente a seus r
 Na figura [[fig:arquitetura]], podemos observar a arquitetura da simulação, sendo que cada membro iniciando com =c:= se trata de um *contêiner* Docker (ou Podman)
 
 #+DOWNLOADED: screenshot @ 2026-11-21 17:07:03
-#+NAME: arquitetura
+#+NAME:fig:arquitetura
 [[file:Arquitetura/2026-11-21_17-07-03_screenshot.png]]
 
 ** Protocolos
@@ -72,17 +72,17 @@ Na figura [[fig:arquitetura]], podemos observar a arquitetura da simulação, se
 | Dashboard                 | Grafana              |
 
 ** Sensores e Atuadores
-| Sensor                              | Função                                                  | Unidade    |
-|-------------------------------------|---------------------------------------------------------|------------|
-| Sensor de Temperatura da Água       | Monitorar a temperatura do tanque                       | °C         |
-| Sensor de pH                        | Monitorar a acidez/alcalinidade da água                 | pH         |
-| Sensor de Salinidade                | Monitorar a concentração de sais dissolvidos            | ppt ou g/L |
-| Sensor de Oxigênio Dissolvido       | Monitorar o nível de oxigênio disponível para os peixes | mg/L       |
-| Sensor de Nível da Água             | Monitorar o volume disponível no tanque                 | cm         |
+| Sensor                        | Função                                                  | Unidade    |
+|-------------------------------+---------------------------------------------------------+------------|
+| Sensor de Temperatura da Água | Monitorar a temperatura do tanque                       | °C         |
+| Sensor de pH                  | Monitorar a acidez/alcalinidade da água                 | pH         |
+| Sensor de Salinidade          | Monitorar a concentração de sais dissolvidos            | ppt ou g/L |
+| Sensor de Oxigênio Dissolvido | Monitorar o nível de oxigênio disponível para os peixes | mg/L       |
+| Sensor de Nível da Água       | Monitorar o volume disponível no tanque                 | cm         |
 
 
 | Atuador                | Função                                  |
-|------------------------|-----------------------------------------|
+|------------------------+-----------------------------------------|
 | Alimentador Automático | Liberar ração para os peixes            |
 | Bomba de Água          | Realizar circulação e renovação da água |
 | Aerador                | Oxigenar a água quando necessário       |
@@ -106,7 +106,7 @@ Na imagem [[fig:entidades]], podemos observar o modelo básico de entidades as q
 |--------------+------------------------------------------------------|
 
 #+DOWNLOADED: screenshot @ 2026-11-21 17:10:54
-#+NAME: entidades
+#+NAME: fig:entidades
 [[file:Entidades/2026-11-22_19-44-22_screenshot.png]]
 
 
@@ -116,7 +116,7 @@ O projeto foi desenhado com a intenção de permitir a escalabilidade e adição
 
 Um *exemplo* de uma base do Orion preenchida com *um* tanque pode ser encontrado na figura [[fig:entidadesPreenchidas]], abaixo.
 
-#+NAME: entidadesPreenchidas
+#+NAME: fig:entidadesPreenchidas
 [[file:Entidades/2026-11-21_17-10-54_screenshot.png]]
 
 
