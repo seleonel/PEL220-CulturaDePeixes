@@ -1,6 +1,6 @@
 #+TITLE: PEL220 - Cultura de Peixes
 #+SUBTITLE: Simulação de um sistema IoT integrado a um tanque de piscicultura. 
-#+AUTHOR: Leon Ferreira Bellini, Victor Acosta, Luis Ricardo
+#+AUTHOR: Leon Ferreira Bellini, Vitor Acosta da Rosa, Luis Ricardo
 #+LANGUAGE: pt-br
 #+LATEX_HEADER: \usepackage[brazilian]{babel}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
@@ -17,6 +17,25 @@ Por meio do acompanhamento dessas métricas, o sistema será capaz de se adaptar
 
 O projeto, seu código e sua documentação contendo os diagramas de entidades e arquitetura geral, podem ser encontrados em [[https://github.com/seleonel/PEL220-CulturaDePeixes][PEL220-CulturaDePeixes]] \nocite{paginaGithub}.
 
+* Introdução
+
+A piscicultura tem se consolidado como uma importante atividade da aquicultura, contribuindo para a produção sustentável de alimentos e para o atendimento da crescente demanda mundial por pescado. Segundo Rastegari et al. (2023), a aquicultura é responsável por parcela significativa da produção de alimentos aquáticos e depende fortemente da manutenção de condições adequadas de qualidade da água para garantir produtividade, sustentabilidade e bem-estar animal.
+
+Nesse contexto, a IoT tem sido apontada como uma das principais tecnologias habilitadoras da chamada /Smart Aquaculture/. De acordo com Costa et al. (2025), a utilização de sensores conectados, sistemas de monitoramento e plataformas digitais possibilita o acompanhamento contínuo de parâmetros ambientais e apoia a tomada de decisão em tempo real, permitindo a redução da intervenção humana e maior eficiência operacional. 
+Entre os parâmetros mais relevantes para a piscicultura estão a temperatura da água, o pH, o oxigênio dissolvido, a salinidade e o nível da água. Rastegari et al. (2023) destacam que o monitoramento contínuo dessas variáveis é fundamental para reduzir perdas produtivas, prevenir situações de estresse e garantir condições adequadas para o desenvolvimento dos peixes. 
+
+Como espécie de referência para este trabalho foi escolhida a Tilápia-do-Nilo (/Oreochromis niloticus/), amplamente utilizada na piscicultura devido à sua resistência a variações ambientais e facilidade de cultivo. Rastegari et al. (2023) apontam a tilápia como uma das espécies mais tolerantes a alterações das condições ambientais quando comparada a outras espécies de interesse comercial, tornando-a adequada para sistemas intensivos e para a aplicação de soluções baseadas em IoT.
+
+Além de sua relevância econômica para a aquicultura, a Tilápia-do-Nilo ganhou destaque em pesquisas brasileiras voltadas à área da saúde. Conforme relatado por Lima Júnior (2017), sua pele vem sendo estudada como curativo biológico para o tratamento de queimaduras, apresentando características favoráveis como elevada aderência à lesão, disponibilidade e potencial para redução do número de trocas de curativos. 
+
+
+* Justificativa
+
+A realização de medições manuais e periódicas dos parâmetros físico-químicos da água pode dificultar a identificação rápida de situações que comprometam a saúde dos peixes. Segundo Costa et al. (2025), a adoção de sistemas baseados em IoT permite a coleta contínua de dados e a execução de mecanismos de monitoramento e atuação distribuídos, reduzindo a dependência de intervenções exclusivamente humanas. 
+
+Dessa forma, propõe-se a simulação de uma infraestrutura IoT para um tanque de piscicultura, utilizando sensores, protocolos de comunicação e ferramentas de observabilidade para monitorar o ambiente em tempo real e realizar ações automáticas quando necessário. O projeto busca demonstrar, em um cenário acadêmico, a aplicação prática de conceitos de IoT, monitoramento distribuído, gerenciamento de contexto e automação aplicados à criação de Tilápia-do-Nilo.
+
+
 * Membros
 
 Na tabela [[GrupoMembros]] são listados os membros do grupo juntamente a seus registros acadêmicos.
@@ -25,7 +44,7 @@ Na tabela [[GrupoMembros]] são listados os membros do grupo juntamente a seus r
 | Nome                  |         RA |
 |-----------------------+------------|
 | Leon Ferreira Bellini | 00126315-1 |
-| Vitor Acosta          | 00126306-0 |
+| Vitor Acosta da Rosa  | 00126306-0 |
 | Luis Ricardo          |            |
 |-----------------------+------------|
 
@@ -42,10 +61,10 @@ Na figura [[fig:arquitetura]], podemos observar a arquitetura da simulação, se
 
 ** Protocolos
 | Componente                | Tecnologia           |
-| ------------------------- | -------------------- |
+|---------------------------|----------------------|
 | Microcontrolador          | ESP32                |
 | Broker MQTT               | Mosquitto            |
-| Conversão MQTT ↔ NGSI     | IoT Agent JSON       |
+| Conversão MQTT <-> NGSI   | IoT Agent JSON       |
 | Gerenciamento de Contexto | Orion Context Broker |
 | Banco Operacional         | MongoDB              |
 | Persistência Histórica    | Cygnus               |
@@ -108,6 +127,12 @@ Um *exemplo* de uma base do Orion preenchida com *um* tanque pode ser encontrado
 2. Acesso a um sistema capaz de executar contêineres docker com suporte à virtualização;
 3. Acesso a um sistema capaz de se conectar à Internet.
 
+* Referências
+COSTA, D.; ROCHA, E. M.; COSTA, V.; ROCHA, M. M.; MARQUES, C. Edge-enabled distributed digital twins with embedded intelligence for smart aquaculture systems. /Journal of Ambient Intelligence and Smart Environments/, v. 18, n. 1, p. 160-175, 2025.
+
+LIMA JÚNIOR, E. M. Tecnologias inovadoras: uso da pele da tilápia do Nilo no tratamento de queimaduras e feridas. /Revista Brasileira de Queimaduras/, v. 16, n. 1, 2017.
+
+RASTEGARI, H.; NADI, F.; LAM, S. S.; IKHWANUDDIN, M.; KASAN, N. A.; RAHMAT, R. F.; MAHARI, W. A. W. Internet of Things in aquaculture: a review of the challenges and potential solutions based on current and future trends. /Smart Agricultural Technology/, v. 4, p. 100187, 2023.
 
 #+PRINT_BIBLIOGRAPHY: 
 
